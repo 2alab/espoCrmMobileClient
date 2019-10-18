@@ -6,7 +6,7 @@ import 'state.dart';
 Reducer<LoginState> buildReducer() {
   return asReducer(
     <Object, Reducer<LoginState>>{
-      LoginAction.action: _onAction,
+//      LoginAction.action: _onAction,
     },
   );
 }

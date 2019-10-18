@@ -1,10 +1,11 @@
+import 'package:espo_contacts/models/credentials.dart';
 import 'package:fish_redux/fish_redux.dart';
 
-//TODO replace with your own action
-enum LoginAction { action }
+enum LoginAction { onLogin }
 
 class LoginActionCreator {
-  static Action onAction() {
-    return const Action(LoginAction.action);
+  static Action onLogin(String username, String password) {
+    return Action(LoginAction.onLogin,
+        payload: Credentials(username, password));
   }
 }

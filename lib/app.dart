@@ -56,11 +56,8 @@ Widget createApp() {
           'EspoCrm client',
           style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
         ),
-        image: new Image.network('https://i.imgur.com/TyCSG9A.png'),
         backgroundColor: Colors.white,
         styleTextUnderTheLoader: new TextStyle(),
-        photoSize: 100.0,
-        onClick: () => print("Flutter Egypt"),
         loaderColor: Colors.red),
     onGenerateRoute: (RouteSettings settings) {
       return MaterialPageRoute<Object>(builder: (BuildContext context) {

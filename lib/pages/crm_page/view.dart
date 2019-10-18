@@ -5,11 +5,13 @@ import 'action.dart';
 import 'state.dart';
 
 Widget buildView(CrmState state, Dispatch dispatch, ViewService viewService) {
+  Widget leadsTab = viewService.buildComponent("leads_tab");
+
   return Scaffold(
     appBar: AppBar(
       title: const Text('EspoCRM'),
     ),
-    body: Center(child: Text("stub ${state.selectedPage}")),
+    body: leadsTab,
     bottomNavigationBar: BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
@@ -19,6 +21,10 @@ Widget buildView(CrmState state, Dispatch dispatch, ViewService viewService) {
         BottomNavigationBarItem(
           icon: Icon(Icons.business),
           title: Text('Кандидаты'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.insert_comment),
+          title: Text('Обращения'),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.pan_tool),
