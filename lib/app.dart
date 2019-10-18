@@ -50,10 +50,10 @@ Widget createApp() {
       primaryColor: Colors.white,
     ),
     home: SplashScreen(
-        seconds: 14,
+        seconds: 2,
         navigateAfterSeconds: "crm_page",
         title: new Text(
-          'Welcome In SplashScreen',
+          'EspoCrm client',
           style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
         ),
         image: new Image.network('https://i.imgur.com/TyCSG9A.png'),

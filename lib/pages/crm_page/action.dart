@@ -1,10 +1,9 @@
 import 'package:fish_redux/fish_redux.dart';
 
-//TODO replace with your own action
-enum CrmAction { action }
+enum CrmAction { selectTab }
 
 class CrmActionCreator {
-  static Action onAction() {
-    return const Action(CrmAction.action);
+  static Action onSelectTab(int tabId) {
+    return Action(CrmAction.selectTab, payload: tabId);
   }
 }
