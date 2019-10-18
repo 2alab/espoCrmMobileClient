@@ -3,23 +3,21 @@ import 'package:fish_redux/fish_redux.dart';
 import 'action.dart';
 import 'state.dart';
 
-Reducer<FavoritesState> buildReducer() {
+Reducer<CredentialsState> buildReducer() {
   return asReducer(
-    <Object, Reducer<FavoritesState>>{
-      FavoritesAction.addToFavorites: _addToFavorites,
-      FavoritesAction.removeFromFavorites: _removeFromFavorites,
+    <Object, Reducer<CredentialsState>>{
+      CredentialsAction.signIn: _singIn,
+      CredentialsAction.signOut: _signOut,
     },
   );
 }
 
-FavoritesState _addToFavorites(FavoritesState state, Action action) {
-  final FavoritesState newState = state.clone();
-  newState.addToFavorites(action.payload);
+CredentialsState _singIn(CredentialsState state, Action action) {
+  final CredentialsState newState = state.clone();
   return newState;
 }
 
-FavoritesState _removeFromFavorites(FavoritesState state, Action action) {
-  final FavoritesState newState = state.clone();
-  newState.removeFromFavorites(action.payload);
+CredentialsState _signOut(CredentialsState state, Action action) {
+  final CredentialsState newState = state.clone();
   return newState;
 }

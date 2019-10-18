@@ -1,14 +1,14 @@
+import 'package:espo_contacts/models/credentials.dart';
 import 'package:fish_redux/fish_redux.dart';
-import 'package:hhr_mobile/models/song.dart';
 
-enum FavoritesAction { addToFavorites, removeFromFavorites }
+enum CredentialsAction { signIn, signOut }
 
-class FavoritesActionCreator {
-  static Action addToFavorites(Song song) {
-    return  Action(FavoritesAction.addToFavorites, payload: song);
-  }
-
-  static Action removeFromFavorites(Song song) {
-    return  Action(FavoritesAction.removeFromFavorites, payload: song);
-  }
+class CredentialsActionCreator {
+//  static Action addToCredentials(Credentials song) {
+//    return  Action(CredentialsAction.addToCredentials, payload: song);
+//  }
+//
+//  static Action removeFromCredentials(Song song) {
+//    return  Action(CredentialsAction.removeFromCredentials, payload: song);
+//  }
 }

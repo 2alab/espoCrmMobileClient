@@ -4,10 +4,10 @@ import 'action.dart';
 import 'reducer.dart';
 import 'state.dart';
 
-class FavoritesStore {
-  static Store<FavoritesState> _globalStore;
+class CredentialsStore {
+  static Store<CredentialsState> _globalStore;
 
-  static Store<FavoritesState> get store =>
-      _globalStore ??= createStore<FavoritesState>(
-          FavoritesState(), buildReducer());
+  static Store<CredentialsState> get store =>
+      _globalStore ??= createStore<CredentialsState>(
+          CredentialsState(), buildReducer());
 }
