@@ -14,6 +14,16 @@ void main() {
     expect(user.name, "Admin");
   });
 
+  test('Wrong login', () async {
+    final wrongCredentials = Credentials("wrong", "1");
+    try {
+      await espo.getUser(baseUrl, wrongCredentials);
+      fail("exception not thrown");
+    } catch (e) {
+      expect(e, isA<espo.UnauthorizedException>());
+    }
+  });
+
   test('Get Leads', () async {
     var leadsResponse = await espo.getLeads(baseUrl, demoCredentials);
 
