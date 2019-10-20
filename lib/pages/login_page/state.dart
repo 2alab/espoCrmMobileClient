@@ -2,7 +2,7 @@ import 'package:espo_contacts/credentials_store/state.dart';
 import 'package:espo_contacts/models/credentials.dart';
 import 'package:fish_redux/fish_redux.dart';
 
-class LoginState implements Cloneable<LoginState>, CredentialsBaseState {
+class LoginState extends CredentialsBaseState implements Cloneable<LoginState> {
   @override
   Credentials credentials;
 

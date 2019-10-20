@@ -5,10 +5,16 @@ abstract class CredentialsBaseState {
   Credentials get credentials;
 
   set credentials(Credentials credentials);
+
+  bool isNotAuthorised() {
+    return null == credentials;
+  }
 }
 
-class CredentialsState
-    implements CredentialsBaseState, Cloneable<CredentialsState> {
+class CredentialsState extends CredentialsBaseState
+    implements Cloneable<CredentialsState> {
+
+  @override
   Credentials credentials;
 
   CredentialsState() {}

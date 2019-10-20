@@ -5,9 +5,9 @@ import 'action.dart';
 import 'state.dart';
 
 Widget buildView(LeadsState state, Dispatch dispatch, ViewService viewService) {
-  return Container(
-      child: FlatButton(
-    child: Text("Залогинится"),
-    onPressed: () => dispatch(LeadsActionCreator.onAction()),
-  ));
+  if (state.isNotAuthorised()) {
+    return viewService.buildComponent("login_button");
+  }
+
+  return Container(child: Text("Какой то контент"));
 }

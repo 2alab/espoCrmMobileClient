@@ -4,7 +4,7 @@ import 'package:espo_contacts/models/credentials.dart';
 import 'package:espo_contacts/pages/crm_page/leads_component/state.dart';
 import 'package:fish_redux/fish_redux.dart';
 
-class CrmState implements Cloneable<CrmState>, CredentialsBaseState {
+class CrmState extends CredentialsBaseState implements Cloneable<CrmState> {
   int selectedPage;
 
   @override

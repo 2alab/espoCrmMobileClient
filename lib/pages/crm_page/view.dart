@@ -6,7 +6,6 @@ import 'state.dart';
 
 Widget buildView(CrmState state, Dispatch dispatch, ViewService viewService) {
   Widget leadsTab = viewService.buildComponent("leads_tab");
-
   return Scaffold(
     appBar: AppBar(
       title: const Text('EspoCRM'),

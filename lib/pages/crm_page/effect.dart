@@ -5,12 +5,14 @@ import 'state.dart';
 
 Effect<CrmState> buildEffect() {
   return combineEffects(<Object, Effect<CrmState>>{
-    Lifecycle.deactivate: _onInit,
+    Lifecycle.initState: _onInit,
   });
 }
 
 Future _onInit(Action action, Context<CrmState> ctx) async {
-  if (null == ctx.state.credentials) {
-    await Navigator.of(ctx.context).pushNamed('login_page');
-  }
+  Future.delayed(Duration.zero, () async {
+    if (null == ctx.state.credentials) {
+      await Navigator.of(ctx.context).pushNamed('login_page');
+    }
+  });
 }
