@@ -6,13 +6,16 @@ import 'state.dart';
 Effect<CrmState> buildEffect() {
   return combineEffects(<Object, Effect<CrmState>>{
     Lifecycle.initState: _onInit,
+    CrmAction.onShowAuthDialog: _onShowAuthDialog,
   });
 }
 
-Future _onInit(Action action, Context<CrmState> ctx) async {
-  Future.delayed(Duration.zero, () async {
-    if (null == ctx.state.credentials) {
-      await Navigator.of(ctx.context).pushNamed('login_page');
-    }
-  });
+void _onInit(Action action, Context<CrmState> ctx) async {}
+
+void _onShowAuthDialog(Action action, Context<CrmState> ctx) async {
+  Widget loginDialog = ctx.buildComponent("login_dialog");
+  showDialog(
+      context: ctx.context,
+      barrierDismissible: false,
+      builder: (bc) => loginDialog);
 }

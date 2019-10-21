@@ -4,6 +4,8 @@ import 'package:espo_contacts/models/credentials.dart';
 import 'package:espo_contacts/pages/crm_page/leads_component/state.dart';
 import 'package:fish_redux/fish_redux.dart';
 
+import 'login_dialog_component/state.dart';
+
 class CrmState extends CredentialsBaseState implements Cloneable<CrmState> {
   int selectedPage;
 
@@ -29,3 +31,12 @@ class LeadsConnector extends ConnOp<CrmState, LeadsState> {
     return playerPanelState;
   }
 }
+
+
+class LoginDialogConnector extends ConnOp<CrmState, LoginDialogState> {
+  @override
+  LoginDialogState get(CrmState state) {
+    return LoginDialogState();
+  }
+}
+

@@ -4,25 +4,26 @@ import 'package:flutter/material.dart';
 import 'action.dart';
 import 'state.dart';
 
-Widget buildView(LoginState state, Dispatch dispatch, ViewService viewService) {
-  return new Scaffold(
-    appBar: _buildBar(),
-    body: new Container(
-      padding: EdgeInsets.all(16.0),
-      child: new Column(
-        children: <Widget>[
-          _buildTextFields(),
-          _buildButtons(dispatch),
-        ],
-      ),
+Widget buildView(
+    LoginDialogState state, Dispatch dispatch, ViewService viewService) {
+  return AlertDialog(
+    title: new Text("authorization"),
+    content: new Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        _buildTextFields(),
+      ],
     ),
-  );
-}
-
-Widget _buildBar() {
-  return new AppBar(
-    title: new Text("Simple Login Example"),
-    centerTitle: true,
+    actions: <Widget>[
+      FlatButton(
+        child: new Text("Close"),
+        onPressed: () => dispatch(LoginDialogActionCreator.onCloseAuthDialog()),
+      ),
+      FlatButton(
+        child: new Text("Login"),
+        onPressed: () {},
+      )
+    ],
   );
 }
 
@@ -46,19 +47,6 @@ Widget _buildTextFields() {
             obscureText: true,
           ),
         )
-      ],
-    ),
-  );
-}
-
-Widget _buildButtons(Dispatch dispatch) {
-  return new Container(
-    child: new Column(
-      children: <Widget>[
-        new RaisedButton(
-          child: new Text('Login'),
-          onPressed: ()=>dispatch(LoginActionCreator.onLogin("test", "test")),
-        ),
       ],
     ),
   );

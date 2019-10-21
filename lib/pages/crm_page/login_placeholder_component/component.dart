@@ -6,15 +6,15 @@ import 'reducer.dart';
 import 'state.dart';
 import 'view.dart';
 
-class LoginButtonComponent extends Component<LoginButtonState> {
-  LoginButtonComponent()
+class LoginPlaceholderComponent extends Component<LoginPlaceholderState> {
+  LoginPlaceholderComponent()
       : super(
           effect: buildEffect(),
           reducer: buildReducer(),
           view: buildView,
-          dependencies: Dependencies<LoginButtonState>(
+          dependencies: Dependencies<LoginPlaceholderState>(
               adapter: null,
-              slots: <String, Dependent<LoginButtonState>>{
+              slots: <String, Dependent<LoginPlaceholderState>>{
 
               }),
         );

@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:espo_contacts/credentials_store/store.dart';
 import 'package:espo_contacts/pages/crm_page/page.dart';
-import 'package:espo_contacts/pages/login_page/page.dart';
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/cupertino.dart' hide Action;
 import 'package:flutter/material.dart' hide Action;
@@ -14,7 +13,6 @@ Widget createApp() {
   final AbstractRoutes routes = PageRoutes(
     pages: <String, Page<Object, dynamic>>{
       'crm_page': CrmPage(),
-      'login_page': LoginPage(),
     },
     visitor: (String path, Page<Object, dynamic> page) {
       if (page.isTypeof<CredentialsBaseState>()) {
