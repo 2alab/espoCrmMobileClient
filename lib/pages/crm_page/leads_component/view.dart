@@ -6,8 +6,9 @@ import 'state.dart';
 
 Widget buildView(LeadsState state, Dispatch dispatch, ViewService viewService) {
   if (state.isNotAuthorised()) {
-    return viewService.buildComponent("login_button");
+    var buildComponent = viewService.buildComponent("login_button");
+    return buildComponent;
   }
 
-  return Container(child: Text("Какой то контент"));
+  return Container(key: Key("stub"), child: Text("Какой то контент"));
 }

@@ -11,6 +11,7 @@ Widget buildView(
   return Container(
       child: Center(
     child: FlatButton(
+      key: Key("loginButton"),
       child: Text("Войти"),
       onPressed: () => dispatch(LoginPlaceholderActionCreator.onShowLoginForm()),
     ),

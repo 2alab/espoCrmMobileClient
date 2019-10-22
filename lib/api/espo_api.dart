@@ -5,11 +5,11 @@ import 'package:espo_contacts/models/user.dart';
 import 'package:http_auth/http_auth.dart' as http_auth;
 import 'package:json_annotation/json_annotation.dart';
 
-Future<User> getUser(String baseUrl, Credentials credentials) async {
+Future<User> getUser(Credentials credentials) async {
   var client =
       http_auth.BasicAuthClient(credentials.username, credentials.password);
 
-  var uri = Uri.https(baseUrl, "/api/v1/App/user");
+  var uri = Uri.https(credentials.host, "/api/v1/App/user");
   var response = await client.get(uri);
 
   switch (response.statusCode) {
@@ -22,13 +22,13 @@ Future<User> getUser(String baseUrl, Credentials credentials) async {
   }
 }
 
-Future<LeadsResponse> getLeads(String baseUrl, Credentials credentials,
+Future<LeadsResponse> getLeads(Credentials credentials,
     {maxSize = 20, offset = 0}) async {
   var client =
       http_auth.BasicAuthClient(credentials.username, credentials.password);
 
   var queryParameters = {"maxSize": "$maxSize", "offset": "$offset"};
-  var uri = Uri.https(baseUrl, "/api/v1/Lead", queryParameters);
+  var uri = Uri.https(credentials.host, "/api/v1/Lead", queryParameters);
   var response = await client.get(uri);
 
 
